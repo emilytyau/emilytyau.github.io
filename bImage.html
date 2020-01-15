@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <style>
+      body{
+        margin:0;
+        padding:0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var bImage;
+      var w = window.innerWidth
+      var h = window.innerHeight
+      
+      function setup() {
+        //This creates a space that is x and y
+        createCanvas(w,h, WEBGL);
+        bImage = loadImage(lady.png);
+      }
+      function draw() {
+        clear();
+        background(bImage);
+        /*I will rotate around the Y axis when I move my mouse horizontally.
+        I will divide by 100 to decrease mouse sensitivity*/
+        rotateY(mouseX/100);
+        /*I will rotate around the X axis when I move my mouse horizontally.
+        I will divide by 100 to decrease mouse sensitivity*/
+        rotateX(mouseY/100);
+        rect(100,100,300,300);
+        fill('blue');
+        
+        rect(200,200,300,300);
+        fill('green');
+        
+        rect(300,300,300,300);
+        fill('orange');
+        
+        noStroke();
+      }
+    </script>
+  </body>
+</html>
